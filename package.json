@@ -1,0 +1,7 @@
+{
+  "name": "csci3308-final",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Kai Dewey",
+  "license": "MIT"
+}
