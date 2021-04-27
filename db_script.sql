@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS tv_reviews (
+  id SERIAL PRIMARY KEY,
+  tv_show VARCHAR(500) NOT NULL,
+  review VARCHAR(6000) NOT NULL,
+  review_date date NOT NULL DEFAULT CURRENT_DATE
+);
