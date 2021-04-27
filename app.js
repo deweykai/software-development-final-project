@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'resources')));
 
+app.use('/api/review', require('./routes/reviews'));
+app.use('/', require('./routes/index'));
+
 // catch 404 and forward to error handler
 app.use((_req, _res, next) => {
   next(createError(404));
