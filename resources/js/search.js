@@ -15,10 +15,13 @@ function loadShow(tv_show) {
 
 function renderShow(show) {
   console.log(show);
-  document.querySelector('#poster-img').src = show.image.original;
-  document.querySelector('#title').innerHTML = show.name;
-  document.querySelector('#summary').innerHTML = show.summary;
-  document.querySelector('#rating').innerHTML = show.rating.average;
+  document.querySelector('#poster-img').src = show.image.original || '-';
+  document.querySelector('#title').innerHTML = show.name || '-';
+  document.querySelector('#summary').innerHTML = show.summary || '-';
+  document.querySelector('#rating').innerHTML = show.rating.average || '-';
+  if (show.genres.length === 0) {
+    show.genres.push('-');
+  }
   document.querySelector('#genres').innerHTML = show.genres;
   hideView(false);
 }
