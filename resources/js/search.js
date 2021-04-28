@@ -10,7 +10,7 @@ function loadShow(tv_show) {
     .then(data => data.json())
     .then(data => data[0])
     .then(show => renderShow((show && show.show) || null))
-    .catch(console.log);
+    .catch(console.error);
 }
 
 let tvTitle;
