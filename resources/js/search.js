@@ -6,7 +6,7 @@ function search(e) {
 
 function loadShow(tv_show) {
   hideView(true);
-  fetch(`http://api.tvmaze.com/search/shows?q=${tv_show}`)
+  fetch(`https://api.tvmaze.com/search/shows?q=${tv_show}`)
     .then(data => data.json())
     .then(data => data[0])
     .then(show => renderShow((show && show.show) || null))
