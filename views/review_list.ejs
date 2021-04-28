@@ -1,0 +1,23 @@
+<form onsubmit="setFilter(event)">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="Enter Movie Title">
+    </div>
+    <div class="col-auto">
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </div>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>TV Show</th>
+      <th>Review</th>
+      <th>Review Date</th>
+    </tr>
+  </thead>
+  <tbody id="reviewList"></tbody>
+</table>
+
+<script src="/js/reviews.js"></script>
