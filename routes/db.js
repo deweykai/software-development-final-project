@@ -6,12 +6,20 @@ const { Pool } = require('pg');
 // PGUSER
 // PGHOST
 // PGDATABASE
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
+let pool;
+
+if (process.env.PG_SSL == 'true') {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  });
+} else {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+  });
+}
 
 module.exports = {
   query: function(text, values) {
